@@ -16,3 +16,24 @@ Route::get('/', function () {
 });
 
 Route::get('tests/test', 'TestController@index');
+
+/**
+ * タスクダッシュボード表示
+ */
+Route::get('/', function () {
+    //
+});
+
+/**
+ * 新タスク追加
+ */
+Route::post('/task', function (Request $request) {
+    //
+});
+
+/**
+ * タスク削除
+ */
+Route::delete('/task/{task}', function (Task $task) {
+    //
+});

@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,23 +19,19 @@ Route::get('/', function () {
 
 Route::get('tests/test', 'TestController@index');
 
-/**
- * タスクダッシュボード表示
- */
-Route::get('/', function () {
-    //
+Route::get('shops/index', 'ShopController@index');
+
+
+Route::group(['prefix' => 'contact', 'middleware' => 'auth'], function () {
+    Route::get('index', 'ContactFormController@index')->name('contact.index');
+    Route::get('create', 'ContactFormController@create')->name('contact.create');
+    Route::post('store', 'ContactFormController@store')->name('contact.store');
+    Route::get('show/{id}', 'ContactFormController@show')->name('contact.show');
+    Route::get('edit/{id}', 'ContactFormController@edit')->name('contact.edit');
+    Route::post('update/{id}', 'ContactFormController@update')->name('contact.update');
+    Route::post('destroy/{id}', 'ContactFormController@destroy')->name('contact.destroy');
 });
 
-/**
- * 新タスク追加
- */
-Route::post('/task', function (Request $request) {
-    //
-});
+Auth::routes();
 
-/**
- * タスク削除
- */
-Route::delete('/task/{task}', function (Task $task) {
-    //
-});
+Route::get('/home', 'HomeController@index')->name('home');

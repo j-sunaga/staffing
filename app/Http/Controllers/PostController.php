@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Services\CheckPostData;
 
 class PostController extends Controller
 {
@@ -48,7 +49,11 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+        $status = CheckPostData::checkStatus($post);
+        $priority = CheckPostData::checkPriority($post);
+
+        return view('posts.show', compact('post', 'status', 'priority'));
     }
 
     /**

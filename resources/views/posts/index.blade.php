@@ -27,17 +27,7 @@
             </thead>
             <tbody>
               @foreach($posts as $post)
-              <tr>
-                <td>{{$post->id}}</td>
-                <td>{{$post->title}}</td>
-                <td>{{$post->detail}}</td>
-                <td>{{$post->deadline}}</td>
-                <td>{{$post->status}}</td>
-                <td>{{$post->priority}}</td>
-                <td><a href="{{route('posts.show',['post' => $post, 'id' => $post->id])}}">詳細</td>
-                <td>編集</td>
-                <td>削除</td>
-              </tr>
+              @include('posts.post', ['post' => $post])
               @endforeach
             </tbody>
           </table>

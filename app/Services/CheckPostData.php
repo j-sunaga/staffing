@@ -26,7 +26,7 @@ class CheckPostData
     if ($data->priority === 1) {
       $priority = '中';
     }
-    if ($data->age === 2) {
+    if ($data->priority === 2) {
       $priority = '高';
     }
     return $priority;

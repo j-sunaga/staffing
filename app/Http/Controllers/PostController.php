@@ -80,7 +80,17 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::find($id);
+
+        $post->title = $request->input('title');
+        $post->detail = $request->input('detail');
+        $post->deadline = $request->input('deadline');
+        $post->status = $request->input('status');
+        $post->priority = $request->input('priority');
+
+        $post->save();
+
+        return redirect()->route('posts.show', ['post' => $post, 'id' => $post->id]);;
     }
 
     /**

@@ -44,7 +44,7 @@
 
   <div class="row">
     <div class="form-group col-md-6">
-      <a href="#">編集</a>
+      <a href="{{route('posts.edit',['post' => $post, 'id' => $post->id])}}">編集</a>
       <a href="/posts">戻る</a>
     </div>
   </div>

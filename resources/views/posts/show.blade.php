@@ -15,9 +15,7 @@
   <div class="row">
     <div class="form-group col-md-6">
       <label>タスク詳細</label>
-      <textarea readonly="" class="form-control" name="task[detail]" rows="5">
-      {{$post->detail}}
-      </textarea>
+      <textarea readonly="" class="form-control" name="task[detail]" rows="5">{{$post->detail}}</textarea>
     </div>
   </div>
 

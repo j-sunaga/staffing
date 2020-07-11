@@ -64,7 +64,11 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        $status = CheckPostData::checkStatus($post);
+        $priority = CheckPostData::checkPriority($post);
+
+        return view('posts.edit', compact('post', 'status', 'priority'));
     }
 
     /**

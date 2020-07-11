@@ -6,28 +6,27 @@
   <h4>ポスト詳細</h4>
 
   <form method="POST" action="{{route('posts.update',['post'=>$post,'id'=>$post->id])}}">
+    @method('PUT')
     @csrf
 
     <div class="row">
       <div class="form-group col-md-6">
-        <label>タスク</label>
-        <input type="text" class="form-control" value="{{$post->title}}">
+        <label>タイトル</label>
+        <input type="text" class="form-control" value="{{$post->title}}" name="title">
       </div>
     </div>
 
     <div class="row">
       <div class="form-group col-md-6">
-        <label>タスク詳細</label>
-        <textarea class="form-control" name="task[detail]" rows="5">
-        {{$post->detail}}
-        </textarea>
+        <label>詳細</label>
+        <textarea class="form-control" name="detail" rows="5">{{$post->detail}}</textarea>
       </div>
     </div>
 
     <div class="row">
       <div class="form-group col-md-6">
         <label>終了期限</label>
-        <input type="date" class="form-control" value="{{explode(" ", $post->deadline)[0]}}">
+        <input type="date" class="form-control" value="{{explode(" ", $post->deadline)[0]}}" name="deadline">
       </div>
     </div>
 

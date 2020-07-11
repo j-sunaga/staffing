@@ -34,7 +34,7 @@
                 <td>{{$post->deadline}}</td>
                 <td>{{$post->status}}</td>
                 <td>{{$post->priority}}</td>
-                <td>詳細</td>
+                <td><a href="{{route('posts.show',['post' => $post, 'id' => $post->id])}}">詳細</td>
                 <td>編集</td>
                 <td>削除</td>
               </tr>

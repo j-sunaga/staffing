@@ -15,7 +15,14 @@
   <div class="row">
     <div class="form-group col-md-6">
       <label>タスク詳細</label>
-      <textarea readonly="" class="form-control" name="task[detail]" rows="5">{{$post->detail}}</textarea>
+      <textarea readonly="" class="form-control" name="detail" rows="5">{{$post->detail}}</textarea>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label>投稿者</label>
+      <input type="text" readonly="" class="form-control" value="{{$post->user->name}}">
     </div>
   </div>
 

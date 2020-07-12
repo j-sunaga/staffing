@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Services\CheckPostData;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -27,7 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -38,7 +39,18 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = new Post;
+
+        $post->title = $request->input('title');
+        $post->detail = $request->input('detail');
+        $post->deadline = $request->input('deadline');
+        $post->status = $request->input('status');
+        $post->priority = $request->input('priority');
+
+        $post->user_id = Auth::id();
+        $post->save();
+
+        return redirect()->route('posts.show', ['post' => $post, 'id' => $post->id]);;
     }
 
     /**

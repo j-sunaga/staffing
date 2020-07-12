@@ -9,6 +9,17 @@ use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
+
+    /**
+     * UserAuthentication
+     *
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -48,6 +59,7 @@ class PostController extends Controller
         $post->priority = $request->input('priority');
 
         $post->user_id = Auth::id();
+
         $post->save();
 
         return redirect()->route('posts.show', ['post' => $post, 'id' => $post->id]);;

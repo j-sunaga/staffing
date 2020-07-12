@@ -28,8 +28,8 @@ services:
     volumes:
       - ./docker-develop/mysql:/var/lib/mysql
     environment:
-      MYSQL_USER: root
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
@@ -38,6 +38,6 @@ services:
     depends_on:
       - db
     environment:
-      MYSQL_USER: root
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       PMA_HOST: db

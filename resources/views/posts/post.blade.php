@@ -5,22 +5,10 @@
   <td>{{explode(" ", $post->deadline)[0]}}</td>
 
   <!-- status -->
-  @if ($post->status === 0)
-  <td>未着手</td>
-  @elseif ($post->status === 1)
-  <td>着手中</td>
-  @else
-  <td>完了</td>
-  @endif
+  <td>{{$post->status->description}}</td>
 
   <!-- priority -->
-  @if ($post->priority === 0)
-  <td>低</td>
-  @elseif ($post->priority === 1)
-  <td>中</td>
-  @else
-  <td>高</td>
-  @endif
+  <td>{{$post->priority->description}}</td>
 
   <td>
     <a href="{{route('posts.show',['post' => $post, 'id' => $post->id])}}">

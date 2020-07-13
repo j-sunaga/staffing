@@ -36,14 +36,14 @@
   <div class="row">
     <div class="form-group col-md-6">
       <label>ステータス</label>
-      <input type="multiple" readonly="" class="form-control" value="{{$status}}">
+      <input type="multiple" readonly="" class="form-control" value="{{$post->status->description}}">
     </div>
   </div>
 
   <div class="row">
     <div class="form-group col-md-6">
       <label>優先順位</label>
-      <input type="multiple" readonly="" class="form-control" value="{{$priority}}">
+      <input type="multiple" readonly="" class="form-control" value="{{$post->priority->description}}">
     </div>
   </div>
 

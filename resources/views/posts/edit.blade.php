@@ -34,9 +34,9 @@
       <div class="form-group col-md-6">
         <label>ステータス</label>
         <select class="form-control input-form" name="status">
-          <option value="0" {{ $post->status == '0' ? 'selected' : '' }}>未着手</option>
-          <option value="1" {{ $post->status == '1' ? 'selected' : '' }}>着手中</option>
-          <option value="2" {{ $post->status == '2' ? 'selected' : '' }}>完了</option>
+          <option value="0" {{ $post->status->value == 0 ? 'selected' : '' }}>未着手</option>
+          <option value="1" {{ $post->status->value == 1 ? 'selected' : '' }}>着手中</option>
+          <option value="2" {{ $post->status->value == 2 ? 'selected' : '' }}>完了</option>
         </select>
       </div>
     </div>
@@ -45,9 +45,9 @@
       <div class="form-group col-md-6">
         <label>優先順位</label>
         <select class="form-control input-form" name="priority">
-          <option value="0" {{ $post->priority == '0' ? 'selected' : '' }}>低</option>
-          <option value="1" {{ $post->priority == '1' ? 'selected' : '' }}>中</option>
-          <option value="2" {{ $post->priority == '2' ? 'selected' : '' }}>高</option>
+          <option value="0" {{ $post->priority->value == 0 ? 'selected' : '' }}>低</option>
+          <option value="1" {{ $post->priority->value == 1 ? 'selected' : '' }}>中</option>
+          <option value="2" {{ $post->priority->value == 2 ? 'selected' : '' }}>高</option>
         </select>
       </div>
     </div>

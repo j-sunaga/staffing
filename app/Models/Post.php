@@ -26,4 +26,8 @@ class Post extends Model
         'status' => 'int',
         'priority' => 'int',
     ];
+
+    protected $dates = [
+        'deadline',
+    ];
 }

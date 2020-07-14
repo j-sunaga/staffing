@@ -26,7 +26,7 @@
     <div class="row">
       <div class="form-group col-md-6">
         <label>終了期限</label>
-        <input type="date" class="form-control" value="{{explode(" ", $post->deadline)[0]}}" name="deadline">
+        <input type="date" class="form-control" value="{{$post->deadline->format('Y-m-d')}}" name="deadline">
       </div>
     </div>
 

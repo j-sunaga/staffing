@@ -2,7 +2,7 @@
   <td>{{$post->id}}</td>
   <td>{{$post->title}}</td>
   <td>{{$post->detail}}</td>
-  <td>{{explode(" ", $post->deadline)[0]}}</td>
+  <td>{{$post->deadline->format('Y-m-d')}}</td>
 
   <!-- status -->
   <td>{{$post->status->description}}</td>

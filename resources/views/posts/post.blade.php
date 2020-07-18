@@ -11,6 +11,12 @@
   <td>{{$post->priority->description}}</td>
 
   <td>
+    @foreach ($post->categories as $category)
+    <p>{{ $category->category_name }}</p>
+    @endforeach
+  </td>
+
+  <td>
     <a href="{{route('posts.show',['post' => $post, 'id' => $post->id])}}">
       詳細</a>
   </td>

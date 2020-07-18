@@ -22,6 +22,7 @@
                 <th scope="col">終了期限</th>
                 <th scope="col">ステータス</th>
                 <th scope="col">優先順位</th>
+                <th scope="col">カテゴリ</th>
                 <th colspan="3"></th>
               </tr>
             </thead>

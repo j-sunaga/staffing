@@ -110,6 +110,8 @@ class PostController extends Controller
 
         $post->save();
 
+        $post->categories()->sync($request->get('category', []));
+
         return redirect()->route('posts.show', ['post' => $post, 'id' => $post->id]);;
     }
 

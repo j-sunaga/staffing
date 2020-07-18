@@ -15,6 +15,11 @@ class Post extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function categories()
+    {
+        return $this->belongsToMany('App\Models\Category');
+    }
+
     use CastsEnums;
 
     protected $enumCasts = [

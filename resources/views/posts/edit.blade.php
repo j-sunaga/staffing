@@ -52,6 +52,24 @@
       </div>
     </div>
 
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label>カテゴリ</label>
+        <div>
+          @foreach ($post->categories as $category)
+          <div class="form-check">
+            @if ($post->categories->contains('id', $category->id))
+            <input name="category[]" type="checkbox" value="{{ $category->id }}" checked>
+            @else
+            <input name="category[]" type="checkbox" value="{{ $category->id }}">
+            @endif
+            <label class='badge badge-secondary'>{{ $category->category_name }}</label>
+          </div>
+          @endforeach
+        </div>
+      </div>
+    </div>
+
     <div class="form-group col-md-6">
       <button type="submit" class="btn btn-primary" name="commit">更新</button>
     </div>

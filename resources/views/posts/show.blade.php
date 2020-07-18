@@ -47,6 +47,15 @@
     </div>
   </div>
 
+  <div>
+    <p class="small_title">Category</p>
+    <p>
+      @foreach ($post->categories as $category)
+      <label class='badge badge-secondary'>{{ $category->category_name }}</label>
+      @endforeach
+    </p>
+  </div>
+
   <div class="row">
     <div class="form-group col-md-6">
       <a href="{{route('posts.edit',['post' => $post, 'id' => $post->id])}}">編集</a>

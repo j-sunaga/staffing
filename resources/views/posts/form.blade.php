@@ -45,7 +45,7 @@
    <div class="form-group col-md-6">
      <label>カテゴリ</label>
      <div>
-       @foreach ($post->categories as $category)
+       @foreach ($categories as $category)
        <div class="form-check">
          @if ($post->categories->contains('id', $category->id))
          <input name="category[]" type="checkbox" value="{{ $category->id }}" checked>
